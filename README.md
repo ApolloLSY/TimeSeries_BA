@@ -19,3 +19,12 @@ GSE41169,GSE40279,GSE51057,GSE42861,GSE51032,GSE73103,GSE69270,GSE64495,GSE30870
 3 Lin, Q. et al. DNA methylation levels at individual age-associated CpG sites can be indicative for life expectancy. Aging 8, 394–401 (2016).
 
 4 Ying, K., Liu, H., Tarkhov, A.E. et al. Causality-enriched epigenetic age uncouples damage and adaptation. Nat Aging 4, 231–246 (2024).
+
+
+经过缺失值和离群值处理剩余316个位点。
+
+①ADF检验得65个CpG位点具有平稳性，应用ARMA(p,q)模型，对它们计算ACF和PACF，确定pq值。而后基于以上pq估计系数。而后画出残差看是否是白噪声，是则完成不是则重来。
+
+剩余129个，一阶差分后有些平稳（这些用ARIMA(p,1,q)模型，后续同上），有些发现方差值变得极其大，于是对这些位点在差分前应用box-cox，之后再用一阶差分。平稳的用ARIMA(p,1,q)，不平稳的继续差分然后用ARIMA(p,2,q)……
+
+②或者先全部都用box-cox处理一遍？不然没用boxcox和用了的ARIMA(p,1,q)岂不是无法从阶数上区分？
