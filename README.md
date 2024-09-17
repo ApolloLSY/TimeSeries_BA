@@ -14,7 +14,7 @@ One practical issue is that cross-sectional DNA methylation data from large popu
 
 This paper utilizes ten datasets from the Gene Expression Omnibus: GSE41169, GSE40279, GSE51057, GSE42861, GSE51032, GSE73103, GSE69270, GSE64495, GSE30870, and GSE52588, totaling 3392 samples, all of which are Homo sapiens samples. The detection method used is the Illumina HumanMethylation450 BeadChip, with standardized 485,577 CpG sites, and the data have passed heterogeneity tests on the Gene Expression Omnibus platform.
 
-## Methodology
+## Methods
 
 1. **Establishing the time series using aging clocks**
 2. **Descriptive statistics, handling of missing values, and outliers**
